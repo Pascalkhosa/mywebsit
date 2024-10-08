@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="En">
+<head>
+ <title>PASCALS CURRICULUM VITAE</title>
+<meta charset="utf-8">
+<meta name="descrition" content=" PERSONAL DETAILS">
+<style>
+    body {
+    background-image: url("C:/Users/Pascal/OneDrive/Documents/scsc assigment/pascal.html/R.jpeg");
+background-size: cover;
+background-position: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+min-height: 100vh;
+margin: 0;
+    }
+</style>
+<style>
+      #content {
+            background-color: rgba(255, 255, 255, 0.8); /* Light background box */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 800px;
+      }
+
+#wet{
+    display:flex;
+justify-content:center;
+text-align: center;
+text-align-last:center;
+}
+.profile-pic{
+width: 250px;
+height: 250px;
+border-radius: 50%;
+object-fit: cover;
+margin-bottom: 20px;
+}
+button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+</style>
+
+
+</head>
+<body>
+    <div id="content">
+<h1 id="wet">CURRICULAM VITAE</h1>
+<h3 id="wet">PERSONAL INFORMATION</h3>
+<label for="name">SURNAME&NAME</label>
+<input type="text" id="name" name="name"><br>
+<label for="dob">Date of Birth:</label>
+<input type="date" id="dob" name="dob"><br>
+<label for="id-no">ID-NO:</label>
+<input type="number" id="id-no" name="id-no"><br>
+<label for="nat">NATIONALITY:</label>
+<input type="text" id="nat" name="nat"><br>
+<label for="pos-add">POSTAL ADDRES:</label>
+<input type="text" id="pos-add" name="pos-add"><br> 
+<label for="tel1">TELEPHONE1:</label>
+<input type="tel" id="tel1" name="tel1"><br>
+<label for="tel2">TELEPHONE2:</label>
+<input type="tel" id="tel2" name="tel2"><br>
+<label for="email-add">EMAIL ADDRESS:</label>
+<input type="email" id="email-add" name="email-add">
+
+<button id="wet" onclick="savePersonalInfo()">Save Personal Info</button>
+
+    </div>
+<script>
+    function savePersonalInfo() {
+        const name=document.getElementById("name")?.value;
+        const dob = document.getElementById("dob")?.value;
+        const idNo = document.getElementById("id-no")?.value;
+        const nationality = document.getElementById("nat")?.value;
+        const postalAddress = document.getElementById("pos-add")?.value;
+        const telephone1 = document.getElementById("tel1")?.value;
+        const telephone2 = document.getElementById("tel2")?.value;
+        const email = document.getElementById("email-add")?.value;
+    
+        localStorage.setItem("name", name);
+            localStorage.setItem("dob", dob);
+            localStorage.setItem("id-no", idNo);
+            localStorage.setItem("nationality", nationality);
+            localStorage.setItem("postal-address", postalAddress);
+            localStorage.setItem("telephone1", telephone1);
+            localStorage.setItem("telephone2", telephone2);
+            localStorage.setItem("email", email);
+
+            alert("Personal information saved. Continue to the next form.");
+
+        
+    }
+</script>
+<a id="wet" href="SYNOPSIS.html" target="_blank">
+    <button>SYNOPSIS</button>
+</a>
+
+   
+</body>
+</html>

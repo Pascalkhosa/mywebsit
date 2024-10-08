@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="En">
+<head>
+ <title>PASCALS CURRICULUM VITAE</title>
+<meta charset="utf-8">
+<meta name="descrition" content=" QUALIFICATIONS">
+<style>
+    body {
+    background-image: url("C:/Users/Pascal/OneDrive/Documents/scsc assigment/pascal.html/R.jpeg");
+background-size: cover;
+background-position: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+min-height: 100vh;
+margin: 0;
+    }
+</style>
+<style>
+      #content {
+            background-color: rgba(255, 255, 255, 0.8); /* Light background box */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 800px;
+      }
+
+#wet{
+    display:flex;
+justify-content:center;
+text-align: center;
+text-align-last:center;
+}
+.profile-pic{
+width: 250px;
+height: 250px;
+border-radius: 50%;
+object-fit: cover;
+margin-bottom: 20px;
+}
+button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+<h1 id="wet">CURRICULAM VITAE</h1>
+<h2>Enter Your Qualifications</h2>
+
+
+<form id="qualificationForm">
+    <label for="period">Period:</label>
+    <input type="text" id="period" name="period" placeholder="e.g., 2004" required>
+
+    <label for="institution">Institution:</label>
+    <input type="text" id="institution" name="institution" placeholder="e.g., University of Venda" required>
+
+    <label for="degree">Degree(s) or Diploma(s) obtained:</label>
+    <input type="text" id="degree" name="degree" placeholder="e.g., Bachelor of Environmental Sciences Honors" required>
+
+    <button type="submit">Add Qualification</button>
+</form>
+
+
+<h2>QUALIFICATIONS</h2>
+<table id="qualificationsTable">
+    <thead>
+        <tr>
+            <th>Period</th>
+            <th>Institution [ Date from - Date to ]</th>
+            <th>Degree(s) or Diploma(s) obtained:</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+    </tbody>
+</table>
+
+<script>
+    
+    const form = document.getElementById('qualificationForm');
+    const tableBody = document.querySelector('#qualificationsTable tbody');
+
+    
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+    
+        const period = document.getElementById('period').value;
+        const institution = document.getElementById('institution').value;
+        const degree = document.getElementById('degree').value;
+
+        
+        const newRow = document.createElement('tr');
+        const periodCell = document.createElement('td');
+        const institutionCell = document.createElement('td');
+        const degreeCell = document.createElement('td');
+
+    
+        periodCell.textContent = period;
+        institutionCell.textContent = institution;
+        degreeCell.textContent = degree;
+
+        
+        newRow.appendChild(periodCell);
+        newRow.appendChild(institutionCell);
+        newRow.appendChild(degreeCell);
+
+        
+        tableBody.appendChild(newRow);
+
+        
+        form.reset();
+    });
+</script>
+</div>
+<button onclick="savequalifications()">Save</button>
+    </div>    
+    <script>
+        function savequalifications(){
+            const period=document.getElementById("period")?.value;
+            const institution=document.getElementById("institution")?.value;
+            const degree=document.getElementById("degree")?.value;
+            localStorage.setItem("period", period);
+            localStorage.setItem("institution",institution);
+            localStorage.setItem("degree",degree);
+            alert("Qualifications saved. Continue to the next form.");
+        }
+    </script>
+
+    <a id="wet" href="WORK EXPERIENCE.html" target="_blank">
+        <button>WORK EXPERIENCE</button>
+    </a>
+</body>
+</html>

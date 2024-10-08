@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="En">
+<head>
+ <title>PASCALS CURRICULUM VITAE</title>
+<meta charset="utf-8">
+<meta name="descrition" content=" WORK EXPERIENCE">
+<style>
+    body {
+    background-image: url("C:/Users/Pascal/OneDrive/Documents/scsc assigment/pascal.html/R.jpeg");
+background-size: cover;
+background-position: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+min-height: 100vh;
+margin: 0;
+    }
+</style>
+<style>
+      #content {
+            background-color: rgba(255, 255, 255, 0.8); /* Light background box */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 800px;
+      }
+
+#wet{
+    display:flex;
+justify-content:center;
+text-align: center;
+text-align-last:center;
+}
+.profile-pic{
+width: 250px;
+height: 250px;
+border-radius: 50%;
+object-fit: cover;
+margin-bottom: 20px;
+}
+button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+        }
+        textarea {
+            padding: 10px;
+            width: 100%;
+            height: 100px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            resize: vertical; /* Allows the user to resize the textarea vertically */
+        }
+        
+</style>
+
+
+</head>
+<body>
+    <div id="content">
+<h1 id="wet">CURRICULAM VITAE</h1>
+
+
+
+<div class="form-group">
+    <label for="WORK">WORK EXPERIENCE:</label>
+    <textarea id="WORK" name="WORK" placeholder="Enter your work experience"></textarea>
+</div>
+<button onclick="saveAllInfo()">Save and Download CV</button>
+</div>
+
+<script>
+function saveAllInfo() {
+    // Retrieve personal information from localStorage
+    const name = localStorage.getItem("name");
+        const dob = localStorage.getItem("dob");
+        const idNo = localStorage.getItem("id-no");
+        const nationality = localStorage.getItem("nationality");
+        const postalAddress = localStorage.getItem("postal-address");
+        const telephone1 = localStorage.getItem("telephone1");
+        const telephone2 = localStorage.getItem("telephone2");
+        const email = localStorage.getItem("email");
+        const synopsis=localStorage.getItem("synopsis");
+        const expertise=localStorage.getItem("expertise");
+        const period=localStorage.getItem("period");
+        const institution=localStorage.getItem("institution");
+        const degree=localStorage.getItem("degree");
+        const qualifications = `${period}, ${institution}, ${degree}`;
+        const WORK=document.getElementById("WORK")?.value;
+        const completeData = `
+            Name: ${name}
+            Date of Birth: ${dob}
+            ID No: ${idNo}
+            Nationality: ${nationality}
+            Postal Address: ${postalAddress}
+            Telephone 1: ${telephone1}
+            Telephone 2: ${telephone2}
+            Email: ${email}
+            
+            Synopsis: ${synopsis}
+
+            AREA OF EXPERTISE: ${expertise}
+
+            QUALIFICATIONS: ${qualifications}
+
+            WORK EXPERIENCE: ${WORK}
+            `;
+
+        
+const blob = new Blob([completeData], { type: 'text/plain' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+
+            // Set the filename using the user's name
+            const sanitizedFileName = name.replace(/[^a-z0-9]/gi, '_').toLowerCase(); // Sanitize the filename
+            link.download = `${sanitizedFileName}_CV.txt`; // Use the sanitized name for the file
+            link.click();
+            URL.revokeObjectURL(link.href);
+        }       
+
+
+</script>
+<a id="wet" href="homepage.html" target="_blank">
+    <button>homepage</button>
+</a>
+</body>
+</html>
+
+    
